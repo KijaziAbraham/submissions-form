@@ -1,0 +1,163 @@
+:root {
+    --white-color: #fff;
+    --light-purple: rgba(117, 79, 254, 0.1);
+    --orange-color: #FC8068;
+    --orange-deep: #FF3C16;
+    --gray-color: #767588;
+    --gray-color2: #929292;
+    --disable-color: #B5B4BD;
+    --color-green: #45C881;
+    --color-light-green: rgba(69, 200, 129, 0.22);
+    --color-yellow: #FFC014;
+    --light-bg: #F9F8F6;
+    --page-bg: #F8F6F0;
+    --border-color: rgba(0, 0, 0, 0.07);
+    --border-color2: rgba(0, 0, 0, 0.09);
+    --body-font-family: 'Jost', sans-serif;
+    --theme-color: #5e3fd7;
+    --plyr-color-main: #5e3fd7;
+    --heading-color: #040453;
+    --body-font-color: #52526C;
+    --navbar-bg-color: #030060;
+    --bs-info: #0dcaf0; 
+}
+
+body {
+    font-family: var(--body-font-family);
+    background-color: var(--light-bg);
+    color: var(--body-font-color);
+}
+
+.subtitle {
+    font-size: 1.125rem; 
+    color: var(--gray-color); 
+    margin-top: 10px; 
+    margin-bottom: 20px; 
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+}
+
+h1 {
+    color: var(--theme-color);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: 500;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+    display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color); 
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+textarea:focus {
+    border-color: var(--bs-info); 
+    outline: none; 
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.btn-primary {
+    background-color: var(--theme-color);
+    color: var(--white-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: var(--plyr-color-main);
+}
+
+.text-danger {
+    color: var(--orange-deep);
+    font-size: 14px;
+}
+
+.text-danger i {
+    margin-right: 5px;
+}
+
+.cv-upload-files {
+    padding: 10px;
+    background-color: var(--white-color);
+    border-radius: var(--bs-border-radius-sm);
+    display: flex;
+    flex-direction: column;
+}
+
+.cv-upload-files input[type="file"] {
+    border: none;
+    background-color: var(--bs-gray-100);
+    padding: 0.5rem;
+    border-radius: var(--bs-border-radius-sm);
+    font-size: 1rem;
+    width: 100%; 
+    margin-top: 5px;
+}
+
+.cv-upload-files p {
+    margin-top: 10px;
+    font-size: 0.875rem; 
+    color: var(--bs-gray-600);
+}
+
+
+.error-message {
+    display: flex;
+    align-items: center; 
+    color: var(--orange-deep); 
+    font-size: 14px; 
+    margin-top: 5px; 
+    list-style: none; 
+    padding-left: 0; 
+}
+
+.error-message::before {
+    content: '';
+}
+
+.error-message i {
+    margin-right: 5px; 
+}
+
+/* Ensure no default markers are applied */
+ul, ol {
+    list-style: none; 
+    padding-left: 0; 
+    margin: 0;
+}

@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submission</title>
+    
+    <!-- Custom Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Toastr -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css">
+    
+    <!-- Custom Styles -->
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2>Personal Information and Document Submission</h2>
+        <p class="subtitle">Please Provide Your Details for Review</p>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="first_name">First Name <span class="text-danger">*</span></label>
+                {{ form.first_name }}
+                {% if form.first_name.errors %}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i> {{ form.first_name.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="middle_name">Middle Name</label>
+                {{ form.middle_name }}
+            </div>
+            
+            <div class="form-group">
+                <label for="last_name">Last Name <span class="text-danger">*</span></label>
+                {{ form.last_name }}
+                {% if form.last_name.errors %}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i> {{ form.last_name.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="dob">Date of Birth <span class="text-danger">*</span></label>
+                {{ form.dob }}
+                {% if form.dob.errors %}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i> {{ form.dob.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="gender">Gender <span class="text-danger">*</span></label>
+                {{ form.gender }}
+                {% if form.gender.errors %}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i> {{ form.gender.errors }}
+                    </div>
+                {% endif %}
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email <span class="text-danger">*</span></label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i> {{ form.email.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="mobile_number">Phone Number <span class="text-danger">*</span></label>
+                {{ form.mobile_number }}
+                {% if form.mobile_number.errors %}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i> {{ form.mobile_number.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            <div class="form-group">
+                <label for="mailing_address">Mailing Address</label>
+                {{ form.mailing_address }}
+            </div>
+            
+            <div class="form-group">
+                <label for="country">Country <span class="text-danger">*</span></label>
+                {{ form.country }}
+                {% if form.country.errors %}
+                    <div class="error-message">
+                        <i class="fas fa-exclamation-triangle"></i> {{ form.country.errors }}
+                    </div>
+                {% endif %}
+            </div>
+            
+            
+            <div class="row mb-30">
+                <div class="col-md-12">
+                    <label class="label-text-title color-heading font-medium font-16 mb-3" for="resume">A recent resume or curriculum vitae <span class="text-danger">*</span></label>
+                    <div class="cv-upload-files">
+                        <div>
+                            {{ form.resume }}
+                        </div>
+                        <p class="font-14 color-heading text-center mt-2 color-gray">Accepted files (PDF)</p>
+                        {% if form.resume.errors %}
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-triangle"></i> {{ form.resume.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-30">
+                <div class="col-md-12">
+                    <label class="label-text-title color-heading font-medium font-16 mb-3" for="identification_document">Identification Document</label>
+                    <div class="cv-upload-files">
+                        <div>
+                            {{ form.identification_document }}
+                        </div>
+                        <p class="font-14 color-heading text-center mt-2 color-gray">Accepted files (PDF, JPG, PNG)</p>
+                        {% if form.identification_document.errors %}
+                            <div class="error-message">
+                                <i class="fas fa-exclamation-triangle"></i> {{ form.identification_document.errors }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <!-- jQuery -->
+    
+    <!-- Bootstrap Bundle with Popper -->
+    
+    <!-- Toastr -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js"></script>
+    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+    <!-- Custom Scripts -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- For FontAwesome icons -->
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        /* Add some basic styling for the email */
+        body { font-family: Arial, sans-serif; }
+        .content { margin: 20px; }
+        .header { font-size: 20px; font-weight: bold; }
+        .details { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="header">New Submission Received</div>
+        <div class="details">
+            <p>A new submission has been received. Please review the details below:</p>
+            <p><strong>Name:</strong> {{ first_name }} {{ middle_name }} {{ last_name }}</p>
+            <p><strong>Date of Birth:</strong> {{ dob }}</p>
+            <p><strong>Gender:</strong> {{ gender }}</p>
+            <p><strong>Email:</strong> {{ email }}</p>
+            <p><strong>Mobile Number:</strong> {{ mobile_number }}</p>
+            <p><strong>Mailing Address:</strong> {{ mailing_address }}</p>
+            <p><strong>Country:</strong> {{ country }}</p>
+            <p><strong>Resume (CV):</strong> <a href="{{ resume_url }}">View Resume</a></p>
+            <p><strong>Identification Document:</strong> <a href="{{ identification_document_url }}">View Document</a></p>
+        </div>
+    </div>
+</body>
+</html>
